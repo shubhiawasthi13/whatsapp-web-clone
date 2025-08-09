@@ -84,7 +84,9 @@ export default function Sidebar({ users, selected, onSelect }) {
                   <div className="name">{user.name}</div>
                   <div className="preview">{user.latest}</div>
                 </div>
+                
               </div>
+              
             ))
           ) : (
             <div className="spinner"></div>

@@ -2,6 +2,7 @@
   display: flex;
   height: 100vh;
   font-family: "Segoe UI", sans-serif;
+
 }
 
 /* Left narrow strip */
@@ -48,6 +49,11 @@
   justify-content: space-between;
   padding: 0.8rem 1rem;
   border-bottom: 1px solid #ddd;
+   position: sticky; /* keeps it fixed inside the chat window */
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  
 }
 .profile-circle {
   width: 40px;

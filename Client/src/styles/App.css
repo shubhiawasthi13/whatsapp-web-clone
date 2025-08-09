@@ -18,9 +18,11 @@ body {
   flex-direction: column;
   background-color: #ece5dd;
   position: relative;
+  height: 100%;
 }
 
 /* Chat Window */
+
 .chat-window {
   display: flex;
   flex-direction: column;
@@ -28,6 +30,7 @@ body {
   background: #efeae2;
 }
 
+/* Fix header at top */
 .chat-header {
   display: flex;
   justify-content: space-between;
@@ -35,6 +38,18 @@ body {
   padding: 8px 16px;
   background: #f0f2f5;
   border-bottom: 1px solid #ddd;
+  position: sticky; /* keeps it fixed inside the chat window */
+  top: 0;
+  z-index: 10;
+}
+
+
+/* Make chat body scrollable */
+.chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #efeae2;
 }
 
 .avatar {
@@ -48,13 +63,6 @@ body {
   font-weight: bold;
   color: #16500a;
   font-size: 16px;
-}
-
-.chat-body {
-  flex: 1;
-  padding: 12px;
-  overflow-y: auto;
-  background: #efeae2;
 }
 
 .message-input {
