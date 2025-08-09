@@ -14,7 +14,6 @@ import {
   Menu,
 } from "lucide-react";
 import "../styles/Sidebar.css";
-import { PiNotebookBold, PiPencilSimpleBold } from "react-icons/pi";
 
 export default function Sidebar({ users, selected, onSelect }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -88,7 +87,7 @@ export default function Sidebar({ users, selected, onSelect }) {
               </div>
             ))
           ) : (
-            <div className="no-results">No chats found</div>
+            <div className="spinner"></div>
           )}
         </div>
       </div>

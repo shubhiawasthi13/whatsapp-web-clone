@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import MessageBubble from "./MessageBubble";
-import { Search, Phone, Video, MoreVertical } from "lucide-react";
+import { Search, Phone, Video, ArrowLeft } from "lucide-react";
 import "../styles/App.css";
 
-export default function ChatWindow({ messages, user, currentUser }) {
+export default function ChatWindow({ messages, user, currentUser, onBack }) {
   const endRef = useRef();
 
   useEffect(() => {
@@ -15,6 +15,10 @@ export default function ChatWindow({ messages, user, currentUser }) {
       {/* Header */}
       <div className="chat-header">
         <div style={{ display: "flex", alignItems: "center" }}>
+          {/* Back arrow for mobile */}
+          <div className="mobile-back-btn" onClick={onBack}>
+            <ArrowLeft size={22} />
+          </div>
           <div className="avatar">
             {user.name?.charAt(0).toUpperCase() || "?"}
           </div>
@@ -23,19 +27,16 @@ export default function ChatWindow({ messages, user, currentUser }) {
 
         {/* Right side icons */}
         <div style={{ display: "flex", gap: "18px", alignItems: "center" }}>
-          <div>
-            <Phone
-              size={20}
-              className="icon"
-              style={{ backgroundColor: "white", padding: "7px" }}
-            />
-            <Video
-              size={20}
-              className="icon"
-              style={{ backgroundColor: "white", padding: "7px" }}
-            />
-          </div>
-
+          <Phone
+            size={20}
+            className="icon"
+            style={{ backgroundColor: "white", padding: "7px" }}
+          />
+          <Video
+            size={20}
+            className="icon"
+            style={{ backgroundColor: "white", padding: "7px" }}
+          />
           <Search size={20} className="icon" />
         </div>
       </div>
